@@ -1,6 +1,7 @@
 import { useState } from "react";
+import "./App.css";
 
-const FillDetailsForm = ({ onFormSubmit }) => {
+const Modal = ({ onFormSubmit }) => {
   const [enteredUsername, setEnteredUsername] = useState("");
   const [enteredEmail, setEnteredEmail] = useState("");
   const [enteredPhone, setEnteredPhone] = useState("");
@@ -38,8 +39,12 @@ const FillDetailsForm = ({ onFormSubmit }) => {
     onFormSubmit(false);
   };
 
+  const modalChangeHandler = () => {
+    onFormSubmit(false);
+  };
   return (
     <div className="modal">
+      <div className="overlay" onClick={modalChangeHandler}></div>
       <div className="modal-content">
         <form onSubmit={validateData}>
           <label>Username:</label>
@@ -93,4 +98,4 @@ const FillDetailsForm = ({ onFormSubmit }) => {
   );
 };
 
-export default FillDetailsForm;
+export default Modal;

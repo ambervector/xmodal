@@ -1,5 +1,5 @@
 import { useState } from "react";
-import FillDetailsForm from "./FormDetails";
+import Modal from "./Modal";
 import "./App.css";
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
     <div className="App">
       <h1>User Details Modal</h1>
       <button onClick={modalToggleHandler}>Open Form</button>
-      {modalIsOpen && <FillDetailsForm onFormSubmit={setModalIsOpen} />}
+      {modalIsOpen && <Modal onFormSubmit={setModalIsOpen} />}
     </div>
   );
 }
